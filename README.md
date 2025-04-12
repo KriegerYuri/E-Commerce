@@ -1,65 +1,73 @@
-# E-Commerce
-Modelo lógico de banco de dados de E-commerce
+🛍️ Projeto de Banco de Dados - E-Commerce
 
-Projeto de Banco de Dados - E-Commerce
+📌 Visão Geral
+Este projeto implementa o esquema lógico de um sistema de e-commerce, com foco em:
+- 🛒 Vendas online
+- 👥 Relacionamento com clientes (pessoa física e jurídica)
+- 📦 Controle de estoque
+- 📑 Gerenciamento de pedidos, entregas e formas de pagamento
+- 🤝 Participação de fornecedores e vendedores terceiros
 
-Visão Geral
-Este projeto implementa o esquema lógico de um sistema de loja virtual com foco em:
+🧱 Estrutura Geral
 
-Vendas online
+🔹 Entidades Principais
 
-Relacionamento com clientes (pessoas físicas e jurídicas)
+👤 Cliente
+Representa os consumidores da loja, podendo ser Pessoa Física (CPF) ou Pessoa Jurídica (CNPJ).
 
-Controle de estoque
+🏠 EnderecoCliente
+Permite armazenar múltiplos endereços por cliente, utilizados para cálculo de frete.
 
-Pedidos, entregas e formas de pagamento
+🏢 Fornecedor
+Empresas responsáveis por fornecer produtos ao estoque da loja.
 
-Participação de fornecedores e vendedores terceiros
+🧑‍💼 VendedorTerceiro
+Empresas terceiras que vendem produtos por meio da plataforma.
 
-Estrutura Geral
-Entidades Principais
-Cliente: Representa os consumidores da loja, podendo ser pessoa física (CPF) ou jurídica (CNPJ).
+📦 Produto
+Artigos disponíveis para venda, sempre vinculados a um fornecedor.
 
-EnderecoCliente: Permite armazenar múltiplos endereços por cliente, utilizados para cálculo de frete.
+🏬 Estoque
+Controle da quantidade de produtos por local físico.
 
-Fornecedor: Entidades responsáveis por fornecer produtos ao estoque da loja.
+🧾 Pedido
+Registro de uma compra realizada, podendo conter vários produtos.
 
-VendedorTerceiro: Empresas que vendem produtos por meio da plataforma.
+📦 ProdutoPedido
+Representa a relação entre pedidos e produtos adquiridos, incluindo quantidade e valor unitário.
 
-Produto: Artigos disponíveis para venda, vinculados a um fornecedor.
+🚚 Entrega
+Controle logístico com código de rastreio, status e datas de envio e recebimento.
 
-Estoque: Controle da quantidade de produtos por local físico.
+💳 Pagamento
+Registro de formas de pagamento associadas ao cliente.
 
-Pedido: Registro de uma compra, podendo conter vários produtos.
+✨ Destaques do Modelo
+- 👥 Um cliente pode possuir múltiplos endereços e formas de pagamento.
+- 🔁 Produtos podem ser vendidos por vendedores terceiros, mas sempre têm um fornecedor principal.
+- 🚚 Entregas são tratadas separadamente dos pedidos, com status e rastreio.
+- 🧮 Suporte a atributos derivados, como cálculo de tempo de entrega.
+- ❌ Suporte a pedidos cancelados.
+- 📦 Suporte a múltiplos produtos por pedido.
 
-ProdutoPedido: Relação entre pedidos e os produtos adquiridos.
+🧪 Scripts
+📝 Inclui:
+- Criação completa do banco de dados
+- Inserção de dados para testes
+- Consultas SQL de análise e relatórios
 
-Entrega: Controle logístico com código de rastreio, status e prazos.
+🔍 Exemplos de Consultas SQL
+- ✅ Contagem de pedidos por cliente
+- 🔗 Junção entre produtos e fornecedores
+- ⏱️ Cálculo de dias entre envio e entrega
+- 📋 Listagem de clientes com mais de um pedido
+- 💳 Consulta de formas de pagamento favoritas por cliente
+- 🚫 Pedidos cancelados nos últimos 30 dias
 
-Pagamento: Métodos de pagamento associados ao cliente.
+⚙️ Utilização
+Basta executar o script SQL em um ambiente compatível com MySQL para:
+- Criar o banco de dados
+- Popular com dados iniciais
+- Executar consultas de exemplo
 
-Destaques do Modelo
-Cliente pode possuir múltiplos endereços e formas de pagamento.
-
-Produtos podem ser vendidos por vendedores terceiros, mas sempre possuem um fornecedor.
-
-Entregas são tratadas separadamente dos pedidos, com controle de status.
-
-Permite atributos derivados como cálculo de tempo de entrega.
-
-Suporte a pedidos cancelados e múltiplos produtos por pedido.
-
-Scripts
-Criação completa do banco + inserções de teste + queries SQL.
-
-Exemplos de Consultas
-Contagem de pedidos por cliente
-
-Junção entre produtos e fornecedores
-
-Cálculo de dias entre envio e entrega
-
-Listagem de clientes com mais de um pedido
-
-Utilização
-Basta executar o script SQL em um ambiente compatível com MySQL para criar o banco e inserir os dados iniciais.
+> Recomendado o uso de ferramentas como MySQL Workbench, DBeaver ou VSCode com extensão SQL.
